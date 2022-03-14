@@ -6,7 +6,9 @@ class PersonController {
     try {
       const { firstName, lastName, email } = req.body;
       if (!firstName || !lastName || !email) {
-        next(ApiError.badRequest("A field is missing"));
+        next(
+          ApiError.badRequest("msg field is required and must be non blank")
+        );
         return;
       }
 
